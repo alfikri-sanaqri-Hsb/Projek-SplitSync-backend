@@ -97,4 +97,16 @@ class BillController extends Controller
             'data' => $item
         ]);
     }
+
+    public function clearHistory(Request $request)
+    {
+        $user = $request->user();
+
+        $user->bills()->delete();
+
+        return response()->json([
+            'success' => true,
+            'message' => 'Riwayat transaksi berhasil dihapus'
+        ]);
+    }
 }

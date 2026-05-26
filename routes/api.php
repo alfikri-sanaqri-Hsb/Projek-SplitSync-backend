@@ -41,6 +41,11 @@ Route::middleware('auth:sanctum')->group(function () {
         [BillController::class, 'updateItemStatus']
     );
 
+    Route::delete(
+        '/clear-history', 
+        [BillController::class, 'clearHistory']
+    );
+
     Route::post(
         '/ocr-receipt',
         [OcrController::class, 'scanReceipt']

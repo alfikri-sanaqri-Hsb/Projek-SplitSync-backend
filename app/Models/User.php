@@ -40,6 +40,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function bills()
+    {
+        return $this->hasMany(Bill::class);
+    }
+
     public function getQrisUrlAttribute()
     {
         return $this->qris
