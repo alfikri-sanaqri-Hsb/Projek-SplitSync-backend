@@ -10,11 +10,6 @@ class BillItem extends Model
 {
     use HasFactory;
 
-    /**
-     * Atribut yang dapat diisi secara massal.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
         'bill_id',
         'item_name',
